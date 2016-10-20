@@ -8,7 +8,7 @@ import {
     Text,
 } from 'react-native';
 
-import Home from './home';
+import AppMain from './appMain';
 
 var { height ,width } = Dimensions.get('window');
 
@@ -21,7 +21,7 @@ class Splash extends Component {
         this.timer = setTimeout(() => {
             InteractionManager.runAfterInteractions(() => {
                 navigator.resetTo({
-                    component: Home,
+                    component: AppMain,
                     params: {}
                 });
             });
