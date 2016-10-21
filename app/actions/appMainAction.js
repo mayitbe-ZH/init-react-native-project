@@ -2,24 +2,24 @@
 import * as actionTypes from '../constants/actionTypes';
 
 
-export function add(){
+// export function add(){
 
-    return (dispatch) => {
-        dispatch({'type':actionTypes.ADD_ING}); //派发任务
-        fetch('http://www.baidu.com')
-            .then((res)=>{
-                dispatch({type:actionTypes.ADD_DONE,name:'add'})
-            })
-            .catch((err) =>{
-                dispatch({type:actionTypes.ADD_ERR,error:err})
-            })
-    }
-}
+//     return (dispatch) => {
+//         dispatch({'type':actionTypes.ADD_ING}); //派发任务
+//         fetch('http://www.baidu.com')
+//             .then((res)=>{
+//                 dispatch({type:actionTypes.ADD_DONE,name:'add'})
+//             })
+//             .catch((err) =>{
+//                 dispatch({type:actionTypes.ADD_ERR,error:err})
+//             })
+//     }
+// }
 
-export function minus(){
+export function selectedTab(tab){
     return {
-        type:actionTypes.MINUS_DONE,
-        name:'minus'    
+        type:actionTypes.SELECTED_TAB,
+        selectedTab:tab
     }
 }
 

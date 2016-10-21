@@ -1,7 +1,9 @@
 import {combineReducers} from 'redux';
-import appMain from './appMainReducer'
+import appMain from './appMainReducer';
+import home from './homeReducer';
 const rootReducer = combineReducers({
-      appMain  //,后面添加reducer
+      appMain,  //,后面添加reducer,
+      home
 })
 
 export default rootReducer;

@@ -1,8 +1,6 @@
-import React, {
-  Component
-} from 'react';
+import React, { Component } from 'react';
 import {
-  AppRegistry
+    AppRegistry
 } from 'react-native';
 
 import testAPP from './app/root';
