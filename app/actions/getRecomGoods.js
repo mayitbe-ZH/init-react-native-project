@@ -3,11 +3,11 @@ import * as actionTypes from '../constants/actionTypes';
 import {HOST} from  '../constants/request';
 import {ListView} from 'react-native';
 
-export function getRecomGoods(){
+export function getRecomGoods(pageIndex = 1){
 
     return (dispatch) => {
         dispatch({'type':actionTypes.GET_RECOM_GOODS_ING}); //派发任务
-        fetch('http://king.wedoyun.com/api.php/product/recommendProducts?'+'pageIndex='+ 1 +'&pageSize=' + 4)
+        fetch('http://king.wedoyun.com/api.php/product/recommendProducts?'+'pageIndex='+ pageIndex +'&pageSize=' + 4)
             .then((response) => response.json())
             .then((responseData)=>{                
                 if (responseData.status) {
