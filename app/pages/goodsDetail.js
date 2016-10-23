@@ -73,7 +73,7 @@ class GoodsDetail extends  Component{
                         <View style={{width:width,height:45,flexDirection:'row',justifyContent:'space-between',alignItems:'center',paddingHorizontal:12,backgroundColor:'#fff',marginBottom:10}}>
                                 <Text style={{fontSize:15,}}>选择 颜色分类</Text>
                                 <View>
-                                        <Image style={{width:7,height:12}} source={require('../imgs/a1.png')}></Image>
+                                        <Image style={{width:7,height:12}} source={require('../imgs/pp_right.png')}></Image>
                                 </View>
                         </View>                        
                         

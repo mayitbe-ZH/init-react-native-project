@@ -35,7 +35,7 @@ const Loading = ({ visible, color, size, overlayColor, onRequestClose }) => (
               size={size}
               color={color}
             />
-            <Text style={styles.loadingText}>数据加载中...</Text>
+            <Text style={styles.loadingText}>加载中...</Text>
           </View>
         </View>
       </View> :

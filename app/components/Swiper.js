@@ -39,10 +39,9 @@ export default class  extends Component {
   }
   render () {
     return (
-        <Swiper style={styles.wrapper} height={184}
-            paginationStyle={{
+        <Swiper style={styles.wrapper} height={184} paginationStyle={{
               bottom: 5
-            }} loop>
+            }} loop autoplay={true}>
            {this.props.imgListData.map((item,index)=>{
             return(
                 <View style={styles.slide} key={index} style={styles.slide1}>

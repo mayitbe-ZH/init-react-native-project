@@ -1,5 +1,5 @@
 import React ,{Component} from 'react';
-import {Text,View,Alert,TextInput,InteractionManager,Image,StyleSheet} from 'react-native';
+import {Text,View,Alert,TextInput,InteractionManager,Image,StyleSheet,AsyncStorage} from 'react-native';
 
 import { connect } from 'react-redux';
 
@@ -9,16 +9,39 @@ import TabNavigator from 'react-native-tab-navigator';
 import Home from './home';
 // import Fav from './fav';
 // import Order from './Order';
-// import Cart from './shoppingCart';
-// import Center from './userCenter';
+import Cart from './shoppingCart';
+import UserCenter from './userCenter';
+import Login from './login';
 
 class AppMain extends Component {
     constructor(props) {
         super(props);  
 
     }
-
-
+    //登录检测
+    _checkLogin = (tag)=>{
+        const {dispatch} = this.props;
+        AsyncStorage.getItem('token').then((result)=>{
+            if (result === null){
+                Alert.alert('温馨提醒','您还没有登录！',
+                [
+                    {text: '取消', onPress: () => console.log('Cancel!')},
+                    {text: '去登录', onPress: () => this.goLogin()}
+                ])
+            }else {
+                console.log(result);
+                dispatch(selectedTab(tag))
+                // dispatch(performCenterAction(result));
+            }}).catch((error)=>{
+                console.log(' error:' + error);
+        })
+    }
+    goLogin = ()=>{
+        console.log('login');
+        this.props.navigator.push({
+            component: Login
+        });        
+    }
     render() {
         const {appMain,dispatch} = this.props;
         return (
@@ -40,8 +63,8 @@ class AppMain extends Component {
                     title="fav"
                     renderIcon={() => <Image source={require('../imgs/c1.png')} style={styles.favIcon}/>}
                     renderSelectedIcon={() => <Image source={require('../imgs/c2.png')} style={styles.favIcon}/>}
-                    onPress={() => dispatch(selectedTab('fav'))}>
-                    <Home/>
+                    onPress={() => {this._checkLogin('fav')}}>
+                    <Home {...this.props}/>
                 </TabNavigator.Item>                
                 <TabNavigator.Item
                     selectedTitleStyle={styles.selectedTextStyle}
@@ -50,8 +73,8 @@ class AppMain extends Component {
                     title="cart"
                     renderIcon={() => <Image source={require('../imgs/b1.png')} style={styles.cartIcon}/>}
                     renderSelectedIcon={() => <Image source={require('../imgs/b2.png')} style={styles.cartIcon}/>}
-                    onPress={() => dispatch(selectedTab('cart'))}>
-                    <Home/>
+                    onPress={() => {this._checkLogin('cart')}}>
+                    <Cart {...this.props}/>
                 </TabNavigator.Item>
                 <TabNavigator.Item
                     selectedTitleStyle={styles.selectedTextStyle}
@@ -60,8 +83,8 @@ class AppMain extends Component {
                     title="user"
                     renderIcon={() => <Image source={require('../imgs/d1.png')} style={styles.userIcon}/>}
                     renderSelectedIcon={() => <Image source={require('../imgs/d2.png')} style={styles.userIcon}/>}
-                    onPress={() => dispatch(selectedTab('user'))}>
-                    <Home/>
+                    onPress={()=>{this._checkLogin('user')}}>
+                    <UserCenter {...this.props}/>
                 </TabNavigator.Item>
             </TabNavigator>
 
