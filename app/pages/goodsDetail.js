@@ -83,18 +83,18 @@ class GoodsDetail extends  Component{
                               <View style={{flexDirection:'column',height:41,justifyContent:'space-between'}}>
                                 <Text>123123123</Text>
                                 <View style={{flexDirection:'row',justifyContent:'flex-start',alignItems:'center'}}>
-                                  <View style={{marginRight:12,flexDirection:'row'}}><Image source={require('../imgs/a1.png')} style={{width:12,height:12,marginRight:2}}></Image><Text style={{fontSize:10,color:'#47C221'}}>微信认证</Text></View>
-                                  <View style={{flexDirection:'row'}}><Image source={require('../imgs/a1.png')} style={{width:12,height:12,marginRight:2}}></Image><Text style={{fontSize:10,color:'#47C221'}}>支持自提</Text></View>
+                                  <View style={{marginRight:12,flexDirection:'row'}}><Image source={require('../imgs/check.png')} style={{width:12,height:12,marginRight:2}}></Image><Text style={{fontSize:10,color:'#47C221'}}>微信认证</Text></View>
+                                  <View style={{flexDirection:'row'}}><Image source={require('../imgs/check.png')} style={{width:12,height:12,marginRight:2}}></Image><Text style={{fontSize:10,color:'#47C221'}}>支持自提</Text></View>
                                 </View>
                               </View>
                             </View>
                             <View style={{flex:1,height:31,flexDirection:'row',justifyContent:'space-between',alignItems:'center'}}>
                                 <View style={{width:171,height:31,borderWidth:1,borderRadius:3,borderColor:'#797979',flexDirection:'row',justifyContent:'center',alignItems:'center',}}>
-                                    <Image source={require('../imgs/img.png')} style={{height:16,width:16}} ></Image>
+                                    <Image source={require('../imgs/addresssmall.png')} style={{height:16,width:16}} ></Image>
                                     <Text style={{fontSize:12,color:'#797979'}}>自提点</Text>
                                 </View>
                                 <View style={{width:171,height:31,borderWidth:1,borderRadius:3,borderColor:'#797979',flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
-                                    <Image source={require('../imgs/a1.png')} style={{height:16,width:16}} ></Image>
+                                    <Image source={require('../imgs/addresssmall.png')} style={{height:16,width:16}} ></Image>
                                     <Text style={{fontSize:12,color:'#797979'}}>进入店铺</Text>
                                 </View>
                             </View>

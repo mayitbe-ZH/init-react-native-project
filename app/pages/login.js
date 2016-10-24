@@ -44,17 +44,15 @@ class Login extends Component {
     // }
     shouldComponentUpdate(nextProps, nextState) {
         const {login,navigator} = this.props;
-        console.log(nextProps,'nextProps')
+        // console.log(nextProps,'nextProps')
         if (nextProps.login.isLogin === true && nextProps.login.isLogin != login.isLogin) { 
             AsyncStorage.setItem('token',nextProps.login.result.token).then(()=>{
                 console.log('token保存成功');    
                 navigator.pop();
-                return false
-
-            }).catch((error)=>{
-                console.log('token保存失败:' + error);
-                return true
-            });
+            })
+            // .catch((error)=>{
+            //     console.log('token保存失败:' + error);
+            // });
         }
         return true
     }
@@ -74,12 +72,13 @@ class Login extends Component {
     goLogin = ()=>{
         const {navigator,dispatch,login} = this.props;
         console.log(username,password)
-        if (username === '' || password === '') {
-            toastShort('账号或密码不能为空...');
-            return 
+        if (username == '' || password == '') {
+            toastShort('账号或密码不能为空...'); 
+        }else{
+            console.log('go');
+            dispatch(loginAction(username,password));            
         }
-        console.log('go');
-        dispatch(loginAction(username,password));
+
     }
     render() {
         const {login} = this.props;
@@ -96,10 +95,10 @@ class Login extends Component {
                 </View>
                 <View style={{backgroundColor:'#fff',marginTop:48,paddingHorizontal:20}}>
                     <View style={{flexDirection:'row',height:45,alignItems:'center'}}>
-                          <Text>用户名</Text>
+                          <Text>用户名1</Text>
                           <TextInput
                             style={{height:40,fontSize: 15,textAlign: 'left',textAlignVertical:'center',flex:1}}
-                            placeholder="邮箱"
+                            placeholder="账号"
                             placeholderTextColor="#CBCBCB"
                             underlineColorAndroid="transparent"
                             numberOfLines={1}

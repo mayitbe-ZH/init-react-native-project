@@ -49,14 +49,14 @@ class UserCenter extends Component {
                   <View style={{flex:1,backgroundColor:'#f5f5f5'}}>
                    <ScrollView style={{flex:1}} showsVerticalScrollIndicator={false}>
                      <View>
-                       <Image style={{width:width,height:100,resizeMode:'stretch',justifyContent:'center'}} source={require('../imgs/menu_qbfl.png')}>
+                       <Image style={{width:width,height:100,resizeMode:'stretch',justifyContent:'center'}} source={require('../imgs/pp_center_bg.png')}>
                          <View style={{flexDirection:'row',height:100,}}>
                             <TouchableOpacity  >
-                                <Image  style={{width:70,height:70,marginLeft:10,marginTop:15,borderRadius:35}} source={require('../imgs/menu_qbfl.png')}>
+                                <Image  style={{width:70,height:70,marginLeft:10,marginTop:15,borderRadius:35}} source={require('../imgs/img.png')}>
                                 </Image>
                             </TouchableOpacity>
                             <View style={{flexDirection:'column',justifyContent:'center',marginLeft:10}}>
-                               <Text style={{fontSize:16,marginBottom:10}}>123123123</Text>
+                               <Text style={{fontSize:16,marginBottom:10,color:'white'}}>123123123</Text>
                                <View style={{flexDirection:'row'}}>
                                   <View style={{width:60,height:18,backgroundColor:'#000',opacity:0.6,borderRadius:9}}>
                                     <Text style={{color:'#fff',fontSize:12,textAlign:'center',}}>
@@ -89,44 +89,40 @@ class UserCenter extends Component {
                      </TouchableOpacity>
                      <View style={{flex:1,height:60,flexDirection:'row',alignItems:'center',backgroundColor:'#fff',marginBottom:10}}>
                        <TouchableOpacity style={{flex:1,height:60,flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
-                         <Image style={{width:21,height:17,resizeMode:'stretch',marginBottom:6}} source={require('../imgs/menu_qbfl.png')}></Image>
+                         <Image style={{width:21,height:17,resizeMode:'stretch',marginBottom:6}} source={require('../imgs/pp_center_dzf.png')}></Image>
                          <Text stlye={{fontSize:12}}>待支付</Text>
                        </TouchableOpacity>
                        <TouchableOpacity style={{flex:1,height:60,flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
-                         <Image style={{width:20,height:20,resizeMode:'stretch',marginBottom:6}} source={require('../imgs/menu_qbfl.png')}></Image>
+                         <Image style={{width:20,height:20,resizeMode:'stretch',marginBottom:6}} source={require('../imgs/pp_center_dfh.png')}></Image>
                          <Text stlye={{fontSize:12}}>待发货</Text>
                        </TouchableOpacity>
                        <TouchableOpacity style={{flex:1,height:60,flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
-                         <Image style={{width:19,height:19,resizeMode:'stretch',marginBottom:6}} source={require('../imgs/menu_qbfl.png')}></Image>
+                         <Image style={{width:19,height:19,resizeMode:'stretch',marginBottom:6}} source={require('../imgs/pp_center_dsh.png')}></Image>
                          <Text stlye={{fontSize:12}}>待收货</Text>
                        </TouchableOpacity>
                        <TouchableOpacity style={{flex:1,height:60,flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
-                         <Image style={{width:20,height:18,resizeMode:'stretch',marginBottom:6}} source={require('../imgs/menu_qbfl.png')}></Image>
+                         <Image style={{width:20,height:18,resizeMode:'stretch',marginBottom:6}} source={require('../imgs/pp_center_dpj.png')}></Image>
                          <Text stlye={{fontSize:12}}>待评价</Text>
                        </TouchableOpacity>
                        <TouchableOpacity style={{flex:1,height:60,flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
-                         <Image style={{width:15,height:21,resizeMode:'stretch',marginBottom:6}} source={require('../imgs/menu_qbfl.png')}></Image>
+                         <Image style={{width:15,height:21,resizeMode:'stretch',marginBottom:6}} source={require('../imgs/pp_center_thh.png')}></Image>
                          <Text stlye={{fontSize:12}}>退换货</Text>
                        </TouchableOpacity>
                      </View>
-                     <CenterItem
-                        title='合伙人'
-                        icon={require('../imgs/menu_qbfl.png')}
-                        />
 
                      <CenterItem
                         title='个人信息'
-                        icon={require('../imgs/menu_qbfl.png')}
+                        icon={require('../imgs/pp_center_grxx.png')}
                         />
 
                      <CenterItem
                         title='账户安全'
-                        icon={require('../imgs/menu_qbfl.png')}
+                        icon={require('../imgs/pp_center_zhaq.png')}
                         />
 
                      <CenterItem
                         title='收货地址'
-                        icon={require('../imgs/menu_qbfl.png')}
+                        icon={require('../imgs/pp_center_shdz.png')}
                         />
 
 
