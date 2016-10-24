@@ -19,13 +19,7 @@ class Home extends Component {
     constructor(props) {
         super(props);       
     }
-    componentDidMount() {
-        InteractionManager.runAfterInteractions(() => {
-          const {dispatch} = this.props;
-          dispatch(getRecomGoods());
-          dispatch(getSwiperImg(9));
-        });     
-    }
+
     renderLoadingView = () =>{
         return (
           <View>

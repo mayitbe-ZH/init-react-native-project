@@ -9,7 +9,9 @@ import {
 } from 'react-native';
 
 import AppMain from './appMain';
-
+import { connect } from 'react-redux';
+import {getRecomGoods} from '../actions/getRecomGoods';
+import {getSwiperImg} from '../actions/getAdsAction';
 var { height ,width } = Dimensions.get('window');
 
 class Splash extends Component {
@@ -17,7 +19,13 @@ class Splash extends Component {
         super(props);
     }
     componentDidMount() {
-        const { navigator } = this.props;
+        const { navigator,dispatch } = this.props;
+        InteractionManager.runAfterInteractions(() => {
+            dispatch(getRecomGoods());
+            dispatch(getSwiperImg(9));
+        });             
+
+
         this.timer = setTimeout(() => {
             InteractionManager.runAfterInteractions(() => {
                 navigator.resetTo({
@@ -43,4 +51,15 @@ class Splash extends Component {
         );
     }
 }
-export default Splash;
+
+//这个函数声明了你的组件需要整个 store 中的哪一部分数据作为自己的 props。 
+function mapStateToProps(state) {
+    const { home,getAds } = state;
+    console.log(home,getAds);
+    return {
+        home,
+        getAds
+    }
+}
+// 包装 component ，注入 dispatch 和 state 到其默认的 connect(selector)(App) 中；
+export default connect(mapStateToProps)(Splash);

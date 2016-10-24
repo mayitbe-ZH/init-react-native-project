@@ -46,13 +46,19 @@ class Login extends Component {
         const {login,navigator} = this.props;
         // console.log(nextProps,'nextProps')
         if (nextProps.login.isLogin === true && nextProps.login.isLogin != login.isLogin) { 
+            toastShort('登录成功...'); 
             AsyncStorage.setItem('token',nextProps.login.result.token).then(()=>{
                 console.log('token保存成功');    
                 navigator.pop();
             })
+            return false
             // .catch((error)=>{
             //     console.log('token保存失败:' + error);
             // });
+        }
+        if (nextProps.login.status === 'err') {
+            toastShort('登录失败...');    
+            // return false
         }
         return true
     }

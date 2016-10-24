@@ -27,7 +27,7 @@ export default function login(state = initialState, action){
             return {
                 ...state,
                 error:action.error,
-                isLogin:false,status:null
+                isLogin:false,status:'err'
             };        
         default:
             return state;
