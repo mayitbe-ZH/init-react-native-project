@@ -32,10 +32,12 @@ class Login extends Component {
     constructor(props) {
         super(props);
     }
-    // componentDidMount() {
-    // // const {navigator} = this.props;
+    componentDidMount() {
+    // const {navigator} = this.props;
+     username = '';
+     password = '';
 
-    // }
+    }
 
     // componentWillMount() {
     //     // if (Platform.OS === 'android') {
@@ -101,7 +103,7 @@ class Login extends Component {
                 </View>
                 <View style={{backgroundColor:'#fff',marginTop:48,paddingHorizontal:20}}>
                     <View style={{flexDirection:'row',height:45,alignItems:'center'}}>
-                          <Text>用户名1</Text>
+                          <Text>用户名</Text>
                           <TextInput
                             style={{height:40,fontSize: 15,textAlign: 'left',textAlignVertical:'center',flex:1}}
                             placeholder="账号"

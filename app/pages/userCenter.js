@@ -38,9 +38,10 @@ class UserCenter extends Component {
                 name: 'Login'
                 });
             }
-        ).catch((error)=>{
-            console.log(' error:' + error.message);
-        })
+        )
+        // .catch((error)=>{
+        //     console.log(' error:' + error.message);
+        // })
     }
 
 
