@@ -23,7 +23,7 @@ let initialRoute = {
     params:{         //路由参数
         name:'Splash'
     },
-    type:''     //动画类型
+    type:''     //动画类型 动画类型
 }
 class App extends  Component {
     constructor(props) {
